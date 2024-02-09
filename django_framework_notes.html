@@ -1,0 +1,2266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Django Tutorial</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DJANGO TUTORIAL </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <button class="btn-success" id="btn1" onclick="swithTabs('1')">Django</button>
+                </li>
+                &nbsp;
+                &nbsp;
+                <li class="nav-item">
+                    <button class="btn-light" id="btn2" onclick="swithTabs('2')">Django Rest</button>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+   
+<div style="display: block;" id="django-block">
+    <h1 class="card-title" style="color: blue;font-size: 40px;margin: 30px;text-decoration: underline ;">
+        <center>
+            Welcome to the
+            Django Tutorial
+        </center>
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="card col-sm alert alert-warning" style="margin-right: 10px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: red;font-size: 30px;">Framework</h5>
+                    <p class="card-text">
+
+                        <li>
+                            Predefined classes & functions that can be used to process input , manage hardware devices
+                            and
+                            interact with system software.
+                        </li>
+                        <li>
+                            building unique features rather than writing full code from scratch
+                        </li>
+
+                        <br>
+                    <h5 class="card-title" style="color: orange;font-size: 30px;">Web Framework</h5>
+                    <li>
+                        Which helps develop website dev
+                    </li>
+                    <li>
+                        Web Services , API's
+                    </li>
+                    <li>
+                        templating, database access to session management
+                    </li>
+                    <br>
+
+                </div>
+            </div>
+
+            <div class="card col-sm alert alert-primary">
+                <div class="card-body">
+
+                    <h5 class="card-title" style="color: green;font-size: 30px;"><b>MVT</b>: Model View Template </h5>
+
+                    <li>Model: database </li>
+                    <li>View : Handles requests , sends data to model then get the appropiate response from the models ,
+                        Mediator between the template and models</li>
+                    <li>Template: HTML ,CSS code </li>
+
+                    <img src="https://cupofcode.blog/wp-content/uploads/2021/04/cupofcode_blog_django_MVT_diagram.png"
+                        height="300px" width="100%" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron" style="margin: 0px;background-color: white;">
+            <h1 class="display-4" style="color: maroon;">Django Project</h1>
+            <p class="lead">A Django Project may contain multiple apps in it .<br>
+
+            </p>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-sm alert-secondary" style="margin-right: 10px;">
+                    <p>
+                        <br>
+                        <b>A School Project may contain</b>
+                        <li>Register App</li>
+                        <li>Fees App</li>
+                        <li>Exam App</li>
+                        <li>Attendence App</li>
+
+                        <hr>
+                        All Apps should be present in <b>settings.py </b>
+                        <li>List every app in settings.py file in <b>INSTALLED_APPS</b></li>
+
+                    </p>
+                </div>
+                <div class="col-sm alert-info">
+                    <p>
+                        <br>
+                        <b>To start django Application use the command </b>
+                        <li> <span class="badge badge-primary" style=""> django-admin startproject projectname </span>
+                            <br>eg. django-admin startproject schoolproject
+                        </li>
+                        <br>
+                        <b>To run the server </b>
+                        <li> <span class="badge badge-warning" style=""> python manage.py runserver </span> </li>
+
+                        <br>
+                        <b>To Create one app in Django </b>
+                        <li> <span class="badge badge-danger" style="">python manage.py startapp AppName </span>
+                            <br>eg. python manage.py startapp Fees
+                        </li>
+
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm">
+                <img src="https://i1.wp.com/techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/Django-file-structure.jpg?fit=1200%2C628&ssl=1"
+                    style="width: 100%;" />
+            </div>
+            <div class="col-sm alert-warning">
+                <h2> Django Directory Structure</h2>
+                <ul>
+                    <li>
+                        <b>wsgi.py :</b> Web Service Gateway Interface
+                        <ol>
+                            <li>
+                                Web App ko interface deta hai
+                            </li>
+                            <li>
+                                When we have to web server related things
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>asgi.py :</b> Async Service Gateway Interface
+                        <ol>
+                            <li>
+                                Asnchornous tasks
+                            </li>
+                            <li>
+                                use of web sockets
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>settings.py</b> Alll the information or data about project settings
+                        <ol>
+                            <li>
+                                Database Confif , template installed application , validators
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <b>manage.py</b>djson project command line utiliti
+                    </li>
+                    <li>
+                        <b>__pycache__</b>folder created after running server: use is to load the project faster
+                    </li>
+                    <li>
+                        <b>db.sqlite3</b>files create
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="card col-sm">
+                <div class="card-header">
+                    wsgi.py
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">wsgi module</h5>
+                    <p class="card-text">
+                        import os <span class="badge badge-secondary">#Importing OS module</span><br>
+                        from django.core.wsgi import get_wsgi_application <span class="badge badge-secondary">#Importing
+                            function from wsgi module</span><br>
+
+                        os.environ.setdefault('DJANGO_SETTINGS_MODULE','APPNAME.settings') <span
+                            class="badge badge-secondary">#Defining settings for the application</span><br>
+
+                        application= get_wsgi_application() <span class="badge badge-secondary">#Returns wsgi
+                            callback</span><br>
+                        <br>
+                        <li>
+                            <span style="color:red">When the wsgi server loads your application djanfo needs to import
+                                the settings module that;s where your entire application is defined </span>
+                        </li>
+                        <li>
+                            <span style="color:red">It must contain the dotted path to the settings module</span>
+
+                        </li>
+
+                    </p>
+                </div>
+            </div>
+            <div class="card col-sm">
+                <div class="card-header">
+                    asgi.py
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">asgi module</h5>
+                    <p class="card-text">
+                        import os <span class="badge badge-primary">#Importing OS module</span><br>
+                        from django.core.asgi import get_asgi_application <span class="badge badge-primary">#Importing
+                            function from asgi module</span><br>
+
+                        os.environ.setdefault('DJANGO_SETTINGS_MODULE','APPNAME.settings') <span
+                            class="badge badge-primary">#Defining settings for the application</span><br>
+
+                        application= get_asgi_application() <span class="badge badge-primary">#Returns asgi
+                            callback</span><br>
+                        <br>
+                        <li>
+                            <span style="color:red">When the asgi server loads your application djanfo needs to import
+                                the settings module that;s where your entire application is defined </span>
+                        </li>
+                        <li>
+                            <span style="color:red">It must contain the dotted path to the settings module</span>
+
+                        </li>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="card col-sm">
+                <div class="card-header">
+                    settings.py
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">settings module</h5>
+                    <p class="card-text">
+
+                        <li>
+                            import os <span class="badge badge-light">#Importing OS module</span><br>
+                        </li>
+                        <li>
+                            BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) <span
+                                class="badge badge-light">#Defines a base directory path using settings.py
+                                path</span><br>
+
+                        </li>
+                        <li>
+                            SECRET_KEY = 'your_secret_key_here' <span class="badge badge-light">Sets a secret key used
+                                for cryptographic signing. </span>
+                        </li>
+                        <li>
+                            DEBUG = True <span class="badge badge-light">Debug mode</span>
+                        </li>
+                        <li>
+                            ALLOWED_HOSTS = [] <span class="badge badge-light">Defines list of hosts/domain names that
+                                this Django site can serve</span>
+                        </li>
+                        <li>
+                            INSTALLED_APPS = [] <span class="badge badge-light">Lists all the Django apps that are
+                                installed and active in your project.</span>
+                        </li>
+                        <li>
+                            MIDDLEWARE = [] <span class="badge badge-light">Middleware are hooks into Django's
+                                request/response processing. </span>
+
+                        </li>
+                        <li>
+                            ROOT_URLCONF = 'your_project_name_here.urls' <span class="badge badge-light">Specifies the
+                                root URL configuration for the project. (urls.py file)</span>
+                        </li>
+                        <li>
+                            TEMPLATES = [
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'BACKEND':
+                            'django.template.backends.django.DjangoTemplates',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'DIRS': [os.path.join(BASE_DIR, 'templates')],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'APP_DIRS': True,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'OPTIONS': {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'context_processors': [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'django.template.context_processors.debug',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'django.template.context_processors.request',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'django.contrib.auth.context_processors.auth',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            'django.contrib.messages.context_processors.messages',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            ],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            },<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            ]
+
+
+                            <br>
+                            <span class="badge badge-light">Configures Django's template engine. Specifies directories
+                                to search for template files, along with other options such as context
+                                processors.</span>
+                        </li>
+                        <li>
+                            WSGI_APPLICATION = 'your_project_name_here.wsgi.application'
+                            <span class="badge badge-light">Specifies the WSGI application for the project. Replace
+                                'your_project_name_here.wsgi.application' with the actual WSGI application module of
+                                your project.</span>
+                        </li>
+                        <br>
+                        <li>
+                            The remaining lines configure database settings, password validation, internationalization,
+                            static files handling, and media files handling. They provide settings related to database
+                            connection, password validation rules, internationalization settings, and static/media file
+                            handling for the project. Each of these configurations is crucial for the proper functioning
+                            of a Django project and should be adjusted according to your project's requirements.
+                        </li>
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h4 class="alert badge-warning">Our DJANGO APP HAS TWO FILES </h4>
+        <div class="row">
+            <div class="col-sm card p-2">
+                <li class="badge-danger pl-2">admin.py : register your application's models </li>
+                <p></p>
+                <li style="color: red;">
+                    Register SQL Tables so we could perform crud operation from admin application
+                </li>
+
+                <li>It allows you to define how your models should be displayed and edited in the admin interface.</li>
+                <li><b>Typical tasks in admin.py include:</b>
+                    <ol>
+                        <li>
+                            Importing models from your application.
+                        </li>
+                        <li>
+                            Registering models using admin.site.register(ModelName).
+                        </li>
+                        <li>
+                            Customizing the display of models in the admin interface using ModelAdmin classes.
+                        </li>
+                        <p><br>
+                            <span class="badge badge-primary">#Code-----SIMPLE-----</span>
+                            <br>
+                            from django.contrib import admin<br>
+                            from .models import MyModel , Post, Comment, Tag, Category<br>
+
+                            # Register your models here.<br>
+                            admin.site.register(MyModel)<br>
+                            admin.site.register(Post)<br>
+                            admin.site.register(Comment)<br>
+                            admin.site.register(Tag)<br>
+                            admin.site.register(Category)
+                        </p>
+                        <p><span class="badge badge-warning">#Code 2------CUSTOMIZED----</span>
+                            <br>
+                            from django.contrib import admin<br>
+                            from .models import MyModel<br>
+
+                            class MyModelAdmin(admin.ModelAdmin):<br>&nbsp;
+                            list_display = ('name', 'description', 'created_at') # Display these fields in the list
+                            view<br>&nbsp;
+                            list_filter = ('created_at',) # Add a filter sidebar for the 'created_at' field<br>&nbsp;
+                            search_fields = ('name', 'description') # Add a search box for these fields<br>&nbsp;
+
+                            admin.site.register(MyModel, MyModelAdmin)<br>
+                        </p>
+                    </ol>
+                </li>
+                </p>
+            </div>
+            <div class="col-sm card p-2 ">
+                <li class="badge-primary pl-2">models.py : define your application's data models </li>
+                <p></p>
+                <li style="color: blue;">
+                    Create models which get converted to database tables.
+                </li>
+                <li>
+                    Models define the structure and behavior of your data, including fields, relationships between
+                    entities, and methods for interacting with the data.
+                </li>
+                <li>
+                    <b>Typical tasks in models.py include:</b>
+                    <ol>
+                        <li>
+                            Defining model classes that subclass django.db.models.Model.
+                        </li>
+                        <li>
+                            Defining fields using classes like CharField, IntegerField, ForeignKey, etc.
+                        </li>
+                        <li>
+                            Defining relationships between models using fields like ForeignKey and ManyToManyField
+                        </li>
+                        <li>
+                            Adding custom methods to model classes for data manipulation or business logic.
+                        </li>
+                        <li>
+                            The __str__ method is overridden to return a human-readable representation of the model
+                            instance
+                        </li>
+                        <li>
+                            A model can have multiple classes i.e multiple tables
+                        </li>
+
+                        <p>
+                            <span class="badge badge-primary">#Code----SIMPLE------</span><span
+                                class="badge badge-warning">#Code----COMPLEX------</span><br>
+                            from django.db import models
+                            <br>
+                            class MyModel(models.Model):<br>&nbsp;
+                            name = models.CharField(max_length=100)<br>&nbsp;
+                            description = models.TextField()<br>&nbsp;
+
+                            def __str__(self):<br>&nbsp;&nbsp;
+                            return self.name<br> &nbsp;
+                            <b>#Custom method to return a shortened version of the description.<br>&nbsp;</b>
+                            def get_short_description(self):<br>&nbsp;&nbsp;&nbsp;
+
+                            if len(self.description) > 50:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            return self.description[:50] + "..."<br>&nbsp;&nbsp;&nbsp;
+                            else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            return self.description
+                        </p>
+                        <li> <b>To use this :</b>
+                            <br>my_model_instance = MyModel.objects.get(pk=1)<br>
+                            short_description = my_model_instance.get_short_description()
+                        </li>
+                    </ol>
+                <li><b style="color: red;">
+                        Commands are : python manage.py makemigration & python manage.py migrate</b>
+                </li>
+                </li>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br>
+
+    <div class="container">
+        <h3>DEFINING URL IN DJANGO </h3>
+        <span>
+            <b> urlpatterns= [ path(route,view , kwargs=None, name=None)]</b>
+        </span>
+        <div class="row">
+
+            <div class="card col-sm alert-warning">
+                <div class="card-header">
+                    <b>Defining all urls in one file </b>
+                </div>
+                <div class="card-body">
+                    <li><br>
+                        from django.urls import path <br>
+                        from mainsite import views as main_view<br>
+                        from blogsite import views as blog_view<br>
+
+                        urlpatterns = [ <br> &nbsp;
+                        path('home/', main_view.home_page),<br> &nbsp;
+                        path('blog/', blog_view.blog_page),<br> &nbsp;
+                        path('articles/<int:article_id>/', main_view.article_detail),<br>
+                            ]
+                    </li>
+                </div>
+            </div>
+            <div class="card col-sm alert-primary">
+                <div class="card-header">
+                    <b>Defining all urls in different file </b>
+                </div>
+                <div class="card-body">
+                    <li><br>
+                        from django.urls import path, <b>include</b> <br>
+                        from mainsite import views as main_view<br>
+
+                        urlpatterns = [ <br> &nbsp;
+
+                        path('blog/', <b>include('blog.urls')</b>),<br> &nbsp;
+                        path('/', <b>include([ path('/',main_view.home) ,path( 'about', main_view.about ) ])</b>)<br>
+                        &nbsp;
+                        ]
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+
+        <h2>Defining templates and render them </h2>
+        <div class="row">
+            <div class="card col-sm p-2 m-2">
+                <span>
+                    <h5>Django Template rendering</h5>
+                    We have to give the templates directory <b>In settings.py give :
+                        TEMPLATES_DIR=os.path.join(BASE_DIR,"templates")</b>
+                    <br>here templates was the main folder for all the templates
+
+                    <b>DIRS= [TEMPLATES_DIR]</b>
+                    <br>
+                    <span class="badge badge-danger">#Code -------</span>
+                    <br>
+                    from django.shortcuts import render<br>
+                    def index(request):<br>&nbsp;&nbsp;
+                    context = {'name': 'World'}<br>&nbsp;&nbsp;
+                    return render(request, 'myapp/index.html', context)
+                    <br>
+                    <span class="badge badge-warning">#IN HTMl TEMPLATE -------</span>
+                    <br>
+                    We have to put key name in double curly braces to get value like : {{name}}
+
+                </span>
+            </div>
+
+
+
+            <div class="card col-sm p-2 m-2">
+                <span>
+                    <h5>Django Template Language</h5>
+                    <li> To get the variable {{variable_name}}</li>
+                    <li> TO put the filter {{variable_name | upper }}</li>
+                    <li> TO use if statement {% if condition %} ------ {% endif %}</li>
+                    <li> TO use for statement {% for data in all_data %} ----{{data}}-- {% endfor %}</li>
+                    <li> TO use key,value statement {% for key,value in all_data %} ----{{key}} {{value}}-- {% endfor %}
+                    </li>
+                    <li>{{forloop.counter}} to get the count of loops from 1</li>
+
+                    <li>{{forloop.counter(0)}} to get the count of loops from 0</li>
+                    <li>{{forloop.first }} true if it is first counter</li>
+                    <li>{{forloop.last }} true if it is last counter</li>
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="container">
+        <hr style="color: red;height: 10px;">
+        <h2>Template </h2>
+        <div class="row">
+            <div class="card col-sm p-2 m-2">
+                <h3>Using extends</h3>
+                <span>
+                    {% extends 'path_to_template.html' %}<br>
+                    &nbsp;&nbsp;
+                    {% block 'block_name_given_in_parent' %}<br>
+                    &nbsp;&nbsp;
+                    {% endblock %}
+
+                </span>
+            </div>
+            <div class="card col-sm p-2 m-2">
+                <h3>Using Include Tag</h3>
+                <span>
+                    each include tag is completely independent <br>
+
+                    {% include 'path_to_template.html' %}<br>
+
+                    {% include 'path_to_template.html' with var1="Anshul" var2="Tiwari" %}<br>
+                    {% include 'path_to_template.html' with var1="Anshul" only %}<br>
+
+                </span>
+            </div>
+            <div class="card col-sm p-2 m-2">
+                <h3>Generate Hyperlink</h3>
+                <span>
+
+
+                    {% url 'url_name' %}<br>
+
+                    {% url 'url_name' as name1 %}<br>
+                    {% url 'url_name' arg1=val1 arg2=val2 %}<br>
+                    {% url 'url_name' val1 val2 %}<br>
+
+
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <div class="container">
+        <h3 style="color: brown;">FORM API vs MODEL FORM</h3>
+        <span>
+            <b>To represnt the form in template use : </b>
+            <br>
+            {% csrf_token %}<br>
+            {{form.non_field_errors}}
+            <br>
+            {% for field in form%}
+            <br>&nbsp;
+            {{field.label_tag}}
+            <br>&nbsp;
+            {{field}}
+            <br>&nbsp;
+            {{field.errors | strip tags}}
+            <br>
+            {% endfor %}
+
+        </span>
+        <div class="row">
+
+            <div class="card col-sm alert-warning">
+                <div class="card-header">
+                    <b>Django Form API (django.forms.Form):</b>
+
+
+                </div>
+                <div class="card-body">
+                    <li>
+                        <b>Purpose:</b> Used for creating forms independent of database models.
+                    </li>
+                    <li>
+                        <b>Field Definitions:</b> Form fields are defined manually using CharField, EmailField, etc.
+                    </li>
+                    <li>
+                        <b> Usage:</b> Ideal for creating custom forms that don't directly map to database models or
+                        include fields from multiple models.
+                    </li>
+                    <li>
+                        <b>Validation:</b> Provides form validation methods like <b>is_valid().</b>
+                    </li>
+                    <li>
+                        <b> Data Handling:</b> Requires manual data processing and saving.
+                    </li>
+                    <li><b>Integration with Models:</b> Not directly tied to Django models.</li>
+                </div>
+                <h4>Code forms.py</h4>
+                <div class="card-body" style="background-color: grey;color: white;">
+
+                    from django import forms<br>
+                    from django.core.validators import MinLengthValidator, EmailValidator<br>
+                    class ContactForm(forms.Form):<br>&nbsp;&nbsp;
+                    name = forms.CharField(max_length=100, validators=[MinLengthValidator(3)])<br>&nbsp;&nbsp;
+                    email = forms.EmailField(validators=[EmailValidator()])<br>&nbsp;&nbsp;
+                    message = forms.CharField(widget=forms.Textarea)
+                </div>
+                <h4>Code views.py</h4>
+                <div class="card-body" style="background-color: darkcyan;color: white;">
+                    from django.shortcuts import render, redirect <br>
+                    from .forms import ContactForm <br>
+                    from .models import Contact # Import your Contact model <br>
+
+                    def contact(request): <br>&nbsp;
+                    if request.method == 'POST': <br>&nbsp;&nbsp;
+                    form = ContactForm(request.POST) <br>&nbsp; &nbsp;
+                    if form.is_valid(): <br>&nbsp; &nbsp; &nbsp;
+                    # Process valid form data <br>&nbsp; &nbsp; &nbsp;
+                    name = form.cleaned_data['name'] <br>&nbsp; &nbsp; &nbsp;
+                    email = form.cleaned_data['email']<br>&nbsp; &nbsp; &nbsp;
+                    message = form.cleaned_data['message']<br>&nbsp; &nbsp; &nbsp;
+
+                    # Save data to Contact model<br>&nbsp; &nbsp; &nbsp;
+                    contact_instance = Contact(name=name, email=email, message=message)<br>&nbsp; &nbsp; &nbsp;
+                    contact_instance.save() <br>&nbsp; &nbsp; &nbsp;
+
+                    return redirect('success_url') # Redirect to a success page<br>&nbsp; &nbsp;
+                    else: <br>&nbsp; &nbsp; &nbsp;
+                    form = ContactForm()<br>&nbsp; &nbsp;
+                    return render(request, 'contact.html', {'form': form})<br>&nbsp; &nbsp;
+                </div>
+                <br>
+            </div>
+            <div class="card col-sm alert-primary">
+                <div class="card-header">
+                    <b>ModelForm (django.forms.ModelForm):</b>
+                </div>
+                <div class="card-body">
+                    <li><b>Purpose:</b> Designed for creating forms directly tied to Django models.
+                    </li>
+                    <li>
+                        <b>Field Definitions:</b> Form fields are automatically generated based on the model's fields.
+                    </li>
+                    <li>
+                        <b>Usage:</b> Suitable for forms related to CRUD operations on specific database models.
+                    </li>
+                    <li>
+                        <b>Validation:</b> Includes model-level validation automatically.
+                    </li>
+                    <li>
+                        <b>Data Handling:</b> Automatically handles data saving to the corresponding model instance.
+                    </li>
+                    <li>
+                        <b>Integration with Models:</b> Tightly integrated with Django models, allowing direct
+                        interaction with model instances.
+                    </li>
+                </div>
+                <h4>Code forms.py</h4>
+                <div class="card-body" style="background-color: grey;color: white;">
+
+                    from django import forms<br>
+                    from .models import Contact<br>
+                    class ContactModelForm(forms.ModelForm):<br>&nbsp;&nbsp;
+                    class Meta:<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    model = Contact<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    fields = ['name', 'email', 'age']<br>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    # we can add custom things as well as per our need
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    labels = {<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    'name': _('Your Name'),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    'email': _('Your Email'),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    'age': _('Your Age'),<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    validators = {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    'name': [MinLengthValidator(3)],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    'email': [EmailValidator()],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    }
+
+                </div>
+                <h4>Code views.py</h4>
+                <div class="card-body" style="background-color: darkcyan;color: white;">
+                    from django.shortcuts import render, redirect <br>
+                    from .forms import ContactModelForm <br>
+
+                    def contact(request): <br>&nbsp;&nbsp;
+                    if request.method == 'POST': <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    form = ContactModelForm(request.POST) <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    if form.is_valid(): <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    # Process valid form data <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    form.save() # Save data to Contact model <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    return redirect('success_url') # Redirect to a success page <br>&nbsp;&nbsp;
+                    else: <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    form = ContactModelForm() <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                    return render(request, 'contact.html', {'form': form})
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+    <div class="container">
+        <h3>CRUD Operation in Django</h3>
+        <div class="row">
+            <div class="card col-sm badge-success">
+                <h4>Create</h4>
+                <span>
+                    <li>
+                        obj = MyModel.objects.create(field1=value1, field2=value2, ...)<br>
+                        obj.save()
+                    </li>
+                </span>
+            </div>
+            <div class="card col-sm badge-primary">
+                <h4>Read</h4>
+                <span>
+                    <li>
+                        all_records = MyModel.objects.all()
+                    </li>
+                    <li>
+                        single_record = MyModel.objects.get(pk=1)
+                    </li>
+                    <li>
+                        filtered_records = MyModel.objects.filter(field1=value1)
+                    </li>
+                </span>
+            </div>
+            <div class="card col-sm badge-warning">
+                <h4>Update</h4>
+                <span>
+                    <li>
+                        obj = MyModel.objects.get(pk=1)
+                        <br>
+                        obj.field1 = new_value1
+                        <br>
+                        obj.field2 = new_value2
+                        <br>
+                        obj.save()
+                    </li>
+                    <li>
+                        When we save using id it takes it as update
+                    </li>
+                </span>
+            </div>
+            <div class=" card col-sm badge-danger">
+                <h4>Delete</h4>
+                <span>
+                    <li>
+                        obj = MyModel.objects.get(pk=1)
+                        <br>
+
+                        obj.delete()
+                    </li>
+                    <li>
+                        When we delete using id it takes it as update
+                    </li>
+                </span>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h3>Predefined Objects (and their functions ) AND Predefined forms </h3>
+        <div class="row">
+            <div class="card badge-primary col-sm m-1 p-2">
+                <h4>Predefined Objects </h4>
+                <li>
+                    <b>
+                        User Objects:
+                    </b>
+                    <ol>
+                        <li>
+                            Django provides a built-in authentication system with user objects
+                        </li>
+                        <li>
+                            managing user accounts, authentication, and authorization.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        Permissions and Groups:
+                    </b>
+                    <ol>
+                        <li>
+                            Django's authentication system includes predefined permissions and user groups.
+                        </li>
+                        <li>
+                            Permissions control access to specific actions or resources within your Django application,
+                            while groups allow you to organize users with similar permissions
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        Sessions:
+                    </b>
+                    <ol>
+                        <li>
+                            Django manages user sessions by default, providing a built-in session object
+                            (request.session)
+                        </li>
+                        <li>
+                            store user-specific data between HTTP requests.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        Sites:
+                    </b>
+                    <ol>
+                        <li>
+                            Django's sites framework allows you to associate content with multiple sites in a single
+                            Django project.
+                        </li>
+                        <li>
+                            The Site model provided by Django represents a website and is useful for building multi-site
+                            applications.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        Cache:
+                    </b>
+                    <ol>
+                        <li>
+                            Django provides a cache framework for caching data and optimizing performance.
+                        </li>
+                        <li>
+                            Predefined cache objects allow you to cache data in memory, in a file, or using a database.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        Request and Response Objects:
+                    </b> HttpRequest and HttpResponse
+                </li>
+                <li>
+                    <b>Forms and Form Fields:</b> CharField, EmailField, DateField, etc.
+                </li>
+                <li><b>Admin Objects:</b> admin site, admin models, and admin views for managing and interacting with
+                    your application's data via a web-based interface.</li>
+                <div class="card-body " style="background-color:black;color: white;">
+                    from django.contrib.auth.models import User<br>
+                    # List attributes and methods of the User model<br>
+                    print(dir(User))
+                </div>
+            </div>
+
+            <div class="card badge-success col-sm m-1 p-2">
+                <h4>Predefined Forms </h4>
+                <li>
+                    <b>
+                        django.forms.Form:
+                    </b>
+                    <ol>
+                        <li>
+                            The base class for creating standard HTML forms. You define form fields explicitly.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        django.forms.ModelForm:
+                    </b>
+                    <ol>
+                        <li>
+                            A form class that automatically generates form fields based on the fields of a specified
+                            model.
+                        </li>
+                        <li>
+                            Useful for creating forms for model instances (CRUD operations).
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        django.contrib.auth.forms.UserCreationForm: </b>
+                    <ol>
+                        <li>
+                            A form for creating new user accounts. Includes fields for username, email, and password.
+                        </li>
+
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        django.contrib.auth.forms.UserChangeForm:
+                    </b>
+                    <ol>
+                        <li>
+                            A form for updating user accounts. Allows editing of user information such as username and
+                            email.
+                        </li>
+
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        django.contrib.auth.forms.AuthenticationForm:
+                    </b>
+                    <ol>
+                        <li>
+                            A form for authenticating users. Includes fields for username and password.
+                        </li>
+
+                    </ol>
+                </li>
+                <li>
+                    <b>
+                        django.contrib.auth.forms.PasswordChangeForm:
+                    </b>
+                    <ol>
+                        <li>
+                            A form for allowing users to change their password. Includes fields for current password,
+                            new password, and confirmation.
+                        </li>
+
+                    </ol>
+                </li>
+                <li>
+                    <b>django.contrib.auth.forms.PasswordResetForm:</b>
+                    <ol>
+                        <li>
+                            A form for allowing users to reset their password. Includes field for email address.
+                        </li>
+
+                    </ol>
+                </li>
+                <div class="card-body " style="background-color:black;color: white;">
+                    from django.contrib.auth.forms import UserCreationForm<br>
+
+                    form = UserCreationForm()<br>
+                    print(form.fields.keys())
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h2>Before Moving further lets look into the predefined installed apps in Django </h2>
+        <div class="row">
+            <div class="card col-sm badge-light">
+                <h4>django.contrib.admin:</h4>
+                <li>
+                    <b>Purpose: </b>Provides an admin interface for managing site content.
+                </li>
+                <li>
+                    <b>
+                        Usage:
+                    </b>
+                    <ol>
+                        <li>
+                            Allows administrators to perform CRUD operations on registered models.
+                        </li>
+                        <li>
+                            Provides customizable admin interface for managing users, groups, permissions, and other
+                            site content.
+                        </li>
+                        <li>
+                            Facilitates rapid development and prototyping by providing a pre-built admin interface.
+                        </li>
+                    </ol>
+                </li>
+            </div>
+            <div class="card col-sm badge-warning">
+                <h4>django.contrib.auth:</h4>
+                <li>
+                    <b>Purpose: </b>Manages user authentication and authorization.
+                </li>
+                <li>
+                    <b>
+                        Usage:
+                    </b>
+                    <ol>
+                        <li>
+                            Handles user registration, login, logout, and password management.
+                        </li>
+                        <li>
+                            Provides built-in user model (User), Group model , Permission model , Session model and
+                            authentication backends for user authentication.
+                        </li>
+                        <li>
+                            Supports user permissions, groups, and user tracking functionalities.
+                        </li>
+                    </ol>
+                </li>
+            </div>
+            <div class="card col-sm badge-success">
+                <h4>django.contrib.sessions</h4>
+                <li>
+                    <b>Purpose: </b>Manages user sessions and session data.
+                </li>
+                <li>
+                    <b>
+                        Usage:
+                    </b>
+                    <ol>
+                        <li>
+                            Stores user-specific data between HTTP requests.
+                        </li>
+                        <li>
+                            Provides session-based authentication and user tracking.
+                        </li>
+                        <li>
+                            Supports various session storage backends for scalability and flexibility.
+                        </li>
+                    </ol>
+                </li>
+            </div>
+            <div class="card col-sm badge-secondary">
+                <h4>django.contrib.messages</h4>
+                <li>
+                    <b>Purpose: </b>Manages messages and notifications for users.
+                </li>
+                <li>
+                    <b>
+                        Usage:
+                    </b>
+                    <ol>
+                        <li>
+                            Displays alerts, notifications, and messages to users in response to their actions.
+                        </li>
+                        <li>
+                            Supports different message levels (e.g., success, warning, error).
+                        </li>
+                        <li>
+                            Integrates seamlessly with Django's template engine for message rendering.
+                        </li>
+                    </ol>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="card p-2">
+                <h3>Perms template Variable</h3>
+                <span>
+                    {% if perms.app_label.permission_codename %}<br>&nbsp;&nbsp;
+                    Content accessible to users with the specified permission <br>
+
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+    <br>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-sm">
+                <div class="card-header">
+                    Middleware
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Middleware</h5>
+                    <p class="card-text">
+                        Middleware are put in the settings.py file and execute in order in which they are defined
+                        <li>
+                            <b>
+                                Request Middleware:
+                            </b>
+                            <ol>
+                                <li>
+
+                                    Middleware classes defined in MIDDLEWARE setting are executed in the order they're
+                                    listed.
+                                </li>
+                                <li>
+                                    Each middleware class has access to the incoming HTTP request before it's passed to
+                                    the view.
+                                </li>
+                                <li>
+                                    You can perform operations like authentication, session management, or modifying
+                                    request headers here.
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <b>
+                                View Function/Class:
+                            </b>
+                            <ol>
+                                <li>The processed request is passed to the appropriate view function or class-based
+                                    view.</li>
+                                <li>Your view performs its logic and returns an HTTP response.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <b>
+                                Response Middleware:
+                            </b>
+                            <ol>
+                                <li>
+                                    Middleware classes are executed in reverse order after the view function or class.
+                                </li>
+                                <li>Each middleware class has access to the outgoing HTTP response.</li>
+                                <li>You can perform operations like setting response headers or modifying the response
+                                    content here.</li>
+                            </ol>
+                        </li>
+                    </p>
+                </div>
+            </div>
+            <div class="card col-sm">
+                <div class="card-header">
+                    <b>
+                        <h2>Middleware </h2>
+                    </b>
+                </div>
+                <div class="card-body" style="background-color: black;color: white;">
+                    <h5 class="card-title">class based middleware Code: </h5>
+                    <p class="card-text">
+
+                        class MyMiddleware:
+
+                        <br>&nbsp;&nbsp;
+                        def __init__(self, get_response):<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                        self.get_response = get_response<br>&nbsp;&nbsp;
+
+                        def __call__(self, request):<br>&nbsp;&nbsp;
+                        <span style="color: green;">&nbsp;
+                            # Code to be executed for each request before the view is called
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            # For example, you can log request data or perform authentication here
+                        </span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        response = self.get_response(request)
+                        <br>
+
+                        <span style="color: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            # Code to be executed for each response before it's returned
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            # For example, you can modify response headers or content here
+                        </span>
+                        <br>
+                        &nbsp;&nbsp;
+                        return response
+                    </p>
+                </div>
+                <br>
+                <div class="card-body" style="background-color: black;color: white;">
+                    <h5 class="card-title">function based middleware Code: </h5>
+                    <p class="card-text">
+
+                        def MyMiddleware(get_response):
+
+                        <br>&nbsp;&nbsp;
+
+
+                        def middleware( request):<br>&nbsp;&nbsp;
+                        <span style="color: green;">&nbsp;
+                            # Code to be executed for each request before the view is called
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            # For example, you can log request data or perform authentication here
+                        </span> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        response = get_response(request)
+                        <br>
+
+                        <span style="color: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            # Code to be executed for each response before it's returned
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            # For example, you can modify response headers or content here
+                        </span>
+                        <br>
+                        &nbsp;&nbsp; &nbsp;&nbsp;
+                        return response
+                        <br> &nbsp;&nbsp;
+                        return middleware
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <br>
+        <h2 style="color: blue;">Difference B/W Session & Cache</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Aspect</th>
+                    <th scope="col">Cache</th>
+                    <th scope="col">Session</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Purpose</th>
+                    <td>Improve performance by storing computed data for faster acces</td>
+                    <td>Maintain user-specific data between HTTP requests</td>
+                </tr>
+                <tr>
+                    <th scope="row">Data Storage</th>
+                    <td>Typically stored in memory or external cache systems</td>
+                    <td>Stored on the server (by default, in a database) or other storage backends</td>
+                </tr>
+                <tr>
+                    <th scope="row">Data Type</th>
+                    <td>Data can be cached for a specified duration or invalidated based on conditions</td>
+                    <td>Session data can be configured to expire after a certain period or be persistent</td>
+                </tr>
+                <tr>
+                    <th scope="row">Usage</th>
+                    <td>Optimize performance of views, template rendering, database queries, etc.</td>
+                    <td>Maintain stateful interactions with users, implement user-specific features</td>
+                </tr>
+                <tr>
+                    <th scope="row">Code</th>
+                    <td>
+                        from django.core.cache import cache<br>
+                        # Set data in cache <br>
+                        cache.set('my_key', 'my_value')<br><br>
+
+                        # Update data in cache<br>
+                        cache.set('my_key', 'new_value')
+                        <br><br>
+                        # Get data from cache <br>
+                        data = cache.get('my_key')<br>
+                        if data is not None:<br>&nbsp;
+                        print(data)
+                        <br>
+                        <br>
+                        # Delete data from cache<br>
+                        cache.delete('my_key')
+
+                    </td>
+                    <td>
+
+                        # Set data in session<br>
+                        request.session['my_key'] = 'my_value'<br><br>
+
+                        # Update data in session <br>
+                        request.session['my_key'] = 'new_value' <br>
+                        <br>
+                        # Get data from session <br>
+                        data = request.session.get('my_key') <br>
+                        if data is not None: <br> &nbsp;
+                        print(data) <br>
+                        <br>
+                        # Delete data from session <br>
+                        del request.session['my_key'] <br>
+                        # or<br>
+                        request.session.pop('my_key', None)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+
+    <div class="container"  id="django-rest-block" style="display: none;">
+        <h1 class="card-title" style="color: red;font-size: 40px;margin: 30px;text-decoration: underline ;">
+            <center>
+                Welcome to the
+                Django  REST FRAMEWORK Tutorial
+            </center>
+        </h1>
+        <img src="https://www.upwork.com/catalog-images-resized/f13174113b73d156410a003b58bae840/large" height="450px"
+            width="100%" />
+        <br>
+        <br>
+        <h2 class="badge badge-danger" style="height: 30px;font-size: larger;">Serializers ( Restful API)</h2>
+        <div class="row">
+
+            <div class="card col-sm">
+                <div class="card-header">
+                    Serializers ( Restful API)
+
+                </div>
+
+                <div class="card-body">
+                    <li>
+                        Serializers are basically used to get the required data from model in the form of json .
+                    </li>
+                    <li>
+                        We can control what fields to return and what not to from the serializer class.
+                    </li>
+                    <li>
+                        You can do mulitple more things in Serializer
+                        <ol>
+                            <li><b>
+                                    Define Serializer Class:
+                                </b>
+                                You define a serializer class YourModelSerializer by subclassing
+                                serializers.ModelSerializer.
+                            </li>
+                            <li>
+                                <b>Meta Class:</b>
+
+                                <ul>
+                                    <li>
+                                        Inside the serializer class, you define a nested Meta class.
+                                    </li>
+                                    <li>
+                                        Meta class is used to provide metadata about the serializer.
+                                    </li>
+                                    <li>
+                                        You specify the model to be serialized (YourModel) and the fields to include
+                                        (fields = ['id', 'name', 'description']).
+                                    </li>
+                                </ul>
+
+
+                            </li>
+                            <li>
+                                <b>Validation:</b>
+                                <ul>
+                                    <li>
+                                        You can implement field-level or object-level validation methods within the
+                                        serializer to validate incoming data.
+                                    </li>
+                                    <li>
+                                        For example, you can define a method validate_name() to validate the name field.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+
+                </div>
+            </div>
+            <div class="card col-sm">
+                <div class="card-header">
+                    Serializers Code
+
+                </div>
+
+                <div class="card-body" style="background-color: black;color: white;">
+                    from rest_framework import serializers
+                    <br>
+                    from .models import YourModel
+                    <br>
+
+                    class YourModelSerializer(serializers.ModelSerializer):
+                    <br> &nbsp;&nbsp;
+                    class Meta:
+                    <br> &nbsp; &nbsp; &nbsp; &nbsp;
+                    model = YourModel
+                    <br> &nbsp; &nbsp; &nbsp; &nbsp;
+                    fields = ['id', 'name', 'description']
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+
+        <h2 class="badge badge-success" style="height: 30px;font-size: larger;width: 100%;text-align: left;">
+            Authentication</h2>
+        <div class="row">
+            <div class="card-body">
+
+                In Django REST Framework (DRF), authentication refers to the process of verifying the identity of users
+                making requests to your API endpoints. DRF provides several built-in authentication classes that you can
+                use to authenticate users. These authentication classes are pluggable, meaning you can choose which
+                one(s) to use based on your application's requirements.
+                <br>
+            </div>
+            <div class="card-body" style="background-color: black; color: white;margin: 20px;">
+                REST_FRAMEWORK = {
+                <br> &nbsp;&nbsp;
+                'DEFAULT_AUTHENTICATION_CLASSES': [
+                <br> &nbsp;&nbsp;&nbsp;&nbsp;
+                'rest_framework.authentication.TokenAuthentication', <br> &nbsp;&nbsp;&nbsp;&nbsp;
+                'rest_framework.authentication.SessionAuthentication', <br> &nbsp;&nbsp;
+                ],<br>
+                }
+            </div>
+        </div>
+        <h3>Steps involved in token based verification</h3>
+        <div class="row" style="margin: 40px 0px;">
+            <div class="card col-sm" style="background-color: green;color: white;">
+                <div class="" style="margin-top: 5px;">
+                    <h4 style="color: orange;">Obtaining a Token:</h4>
+                    <li>
+                        <b>User Authentication:</b> &nbsp;The user sends their credentials (e.g., username and password)
+                        to the authentication endpoint of your API.
+                    </li>
+                    <li>
+                        <b>Authentication Process:</b> &nbsp;
+                        Django Rest Framework processes the request, authenticates the user based on the provided
+                        credentials.
+                        &nbsp;
+                        If the credentials are valid, Django Rest Framework generates a token for the authenticated
+                        user.
+                    </li>
+                    <li>
+                        <b>Token Generation:</b> &nbsp;
+                        The token is typically a long random string associated with the authenticated user.
+                        This token is then returned in the response to the authentication request.
+                    </li>
+                    <br>
+                </div>
+            </div>
+            <div class="card col-sm" style="background-color: blue;color: white;">
+                <div class="" style="margin-top: 5px;">
+                    <h4 style="color: orange;">Using the Token:</h4>
+                    <li>
+                        <b>Client Storage:</b> &nbsp;
+                        The client (e.g., a web browser, mobile app) stores the token securely. In web applications,
+                        tokens are often stored in cookies or local storage.
+                    </li>
+                    <li>
+                        <b>Subsequent Requests:</b> &nbsp;
+                        For any subsequent requests that require authentication, the client includes the token in the
+                        request headers, typically in the Authorization header.
+                    </li>
+
+                    <br>
+                </div>
+            </div>
+            <div class="card col-sm" style="background-color: red;color: white;">
+                <div class="" style="margin-top: 5px;">
+                    <h4 style="color: orange;">Validating the Token:</h4>
+                    <li>
+                        <b>Token Extraction:</b> &nbsp;When a request reaches a view protected by token authentication,
+                        Django Rest Framework extracts the token from the request headers.
+                    </li>
+                    <li>
+                        <b>Token Verification:</b> &nbsp;
+                        The extracted token is then verified for its validity. This typically involves checking if the
+                        token exists in the database of valid tokens and if it hasn't expired.
+                    </li>
+                    <li>
+                        <b>User Association:</b> &nbsp;
+                        If the token is valid, Django Rest Framework associates the token with a user. This information
+                        is then available in the request.user attribute.
+                    </li>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+
+        <b>Their are mutliple types of Authentication which we will be studying now</b><br>
+        <div class="row">
+
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                        href="#list-home" role="tab" aria-controls="home">BasicAuthentication:</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                        href="#list-profile" role="tab" aria-controls="profile">SessionAuthentication</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                        href="#list-messages" role="tab" aria-controls="messages">TokenAuthentication</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-settings" role="tab" aria-controls="settings">JSONWebTokenAuthentication</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-settings2" role="tab" aria-controls="settings2">OAuth2Authentication</a>
+
+                </div>
+            </div>
+            <div class="col-8" style="border: 1px solid black;">
+                <div class="tab-content" id="nav-tabContent">
+
+                    <!-- BASIC AUTHENTICATION  -->
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                        aria-labelledby="list-home-list">
+
+                        <div class="" style="margin-top: 5px;">
+                            <h4 style="color: orange;text-decoration: underline;">Basic Authentication</h4>
+                            <li>The user sends their credentials (e.g., username and password) to the authentication
+                                endpoint of your API.
+                            </li>
+                            <li>
+                                You provide the username and password in the HTTP headers of your request eg.
+                                <b>Authorization: Basic < base64-encoded-credentials>
+                                        < /base64-encoded-credentials> </b> or <b>headers = {'Authorization': f'Basic
+                                    {base64_credentials}'} in python</b>
+                            </li>
+                            <button class="badge btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                View Testing Code
+                            </button>
+                            <br>
+                            <span>
+                                <b style="color: red;">Python Code for this:</b>
+                                <br>
+                            </span>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Code To Test the api </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <pre style="background-color: black;color: white;"><code >
+    // URL of the protected view
+    var url = 'http://example.com/my-basic-protected-view/';
+
+    // Credentials for Basic Authentication
+    var username = 'your_username';
+    var password = 'your_password';
+
+    // Encode the credentials in Base64
+    var credentials = `${username}:${password}`;
+    var credentials_encoded = btoa(credentials);
+
+    // Prepare the request headers
+    var headers = {'Authorization': `Basic ${credentials_encoded}`};
+
+    // Send the request
+    var response = fetch(url, {headers: headers})
+    .then(response => {
+        if (response.status == 200) {
+            console.log("Authenticated successfully!");
+            return response.json();
+        } else {
+            console.error("Authentication failed. Status code:", response.status);
+            return null;
+        }
+    })
+    .then(data => {
+        console.log("Response:", data);
+    })
+    .catch(error => console.error("Error:", error));
+                                    </code></pre>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" style="background-color: black; color: white;padding: 20px;">
+                            from rest_framework.views import APIView <br>
+                            from rest_framework.response import Response <br>
+                            from rest_framework.authentication import BasicAuthentication <br>
+                            from rest_framework.permissions import IsAuthenticated <br>
+
+                            class MyBasicProtectedView(APIView): <br> &nbsp; &nbsp;
+                            authentication_classes = [BasicAuthentication] <br> &nbsp; &nbsp;
+                            permission_classes = [IsAuthenticated] <br> &nbsp; &nbsp;
+
+                            def get(self, request): <br> &nbsp; &nbsp;&nbsp; &nbsp;
+                            content = {'message': 'You are authenticated!', 'user': request.user.username} <br> &nbsp;
+                            &nbsp;&nbsp; &nbsp;
+                            return Response(content)
+                        </div>
+                    </div>
+
+
+                    <!-- SESSION AUTHENTICATION  -->
+
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="" style="margin-top: 5px;">
+                            <h4 style="color: orange;text-decoration: underline;">Session Authentication</h4>
+                            <li>The user sends their session cookies to the endpoint.
+                            </li>
+                            <button class="badge btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-1">
+                                View Testing Code
+                            </button>
+                            <br>
+                            <span>
+                                <b style="color: red;">Python Code for this:</b>
+                                <br>
+                            </span>
+                        </div>
+                        <div class="card" style="background-color: black; color: white;padding: 20px;">
+
+                            <pre><code style="color: white;">
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+class MySessionProtectedView(APIView):
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        content = {'message': 'You are authenticated!', 'user': request.user.username}
+        return Response(content)
+                                
+</code></pre>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg-1" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Code To Test the api for session  </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <pre style="background-color: black;color: white;"><code >
+    // Define the URL of the DRF endpoint
+    var url = 'http://your-django-api.com/my-session-protected-view/';
+    
+    // Prepare the request options
+    var options = {
+        method: 'GET',
+        credentials: 'include', // Include credentials (cookies) in the request
+    };
+    
+    // Send a GET request to the protected endpoint
+    fetch(url, options)
+        .then(response => {
+            if (response.ok) {
+                // If the response is successful, parse the JSON response
+                return response.json();
+            } else {
+                // If there's an error, throw an error with the status text
+                throw new Error('Failed to fetch data: ' + response.statusText);
+            }
+        })
+        .then(data => {
+            // Process the response data
+            console.log('Response:', data);
+        })
+        .catch(error => {
+            // Handle any errors
+            console.error('Error:', error);
+        });
+                                            
+                                    </code></pre>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- TOKEN AUTHENTICATION  -->
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        <div class="" style="margin-top: 5px;">
+                            <h4 style="color: orange;text-decoration: underline;">Token Authentication</h4>
+                            <li>The user sends their credentials (e.g., username and password) to the authentication
+                                endpoint of your API and in return get the token.
+                            </li>
+                            <button class="badge btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-2">
+                                View Testing Code
+                            </button>
+                            <br>
+                            <span>
+                                <b style="color: red;">Python Code for this:</b>
+                                <br>
+                            </span>
+                        </div>
+                        <div class="card" style="background-color: black; color: white;padding: 20px;">
+
+                            <pre><code style="color: white;">
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authtoken.models import Token
+
+class MyTokenObtainView(APIView):
+    authentication_classes = []
+    
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        
+        # Perform authentication (e.g., validate credentials)
+        # If authentication succeeds, generate a token
+        user = authenticate(username=username, password=password)
+        if user:
+            token, _ = Token.objects.get_or_create(user=user)
+            return Response({'token': token.key})
+        else:
+            return Response({'error': 'Invalid credentials'}, status=400)
+
+class MyProtectedView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        content = {'message': 'You are authenticated!', 'user': request.user.username}
+        return Response(content)
+</code></pre>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg-2" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Code To Test the api for token  </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <pre style="background-color: black;color: white;"><code >
+
+    var url = 'http://your-django-api.com/my-token-obtain-view/';
+    
+    // Define the credentials to be sent for authentication
+    var credentials = {
+        username: 'your_username',
+        password: 'your_password'
+    };
+    
+    // Prepare the request options
+    var options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    };
+    
+    // Send a POST request to obtain the token
+    fetch(url, options)
+        .then(response => {
+            if (response.ok) {
+                // Extract the token from the response JSON
+                return response.json();
+            } else {
+                throw new Error('Failed to obtain token');
+            }
+        })
+        .then(data => {
+            // Assuming the response contains a 'token' field
+            var token = data.token;
+            console.log('Token obtained successfully:', token);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+                                    </code></pre>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <!-- JWT AUTHENTICATION  -->
+
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        <div class="" style="margin-top: 5px;">
+                            <h4 style="color: orange;text-decoration: underline;">JWT Authentication</h4>
+                            <li>The user sends token for the authentication .
+                            </li>
+                            <button class="badge btn-success" data-toggle="modal" data-target=".bd-example-modal-lg-3">
+                                View Testing Code
+                            </button>
+                            <br>
+                            <span>
+                                <b style="color: red;">Python Code for this:</b>
+                                <br>
+                            </span>
+                        </div>
+                        <div class="card" style="background-color: black; color: white;padding: 20px;">
+
+                            <pre><code style="color: white;">
+    from rest_framework.views import APIView
+    from rest_framework.response import Response
+    from rest_framework.permissions import IsAuthenticated
+    from rest_framework_simplejwt.tokens import RefreshToken
+    from .serializers import CustomUserSerializer
+    from .models import CustomUser
+    
+    class MyTokenObtainView(APIView):
+        def post(self, request):
+            username = request.data.get('username')
+            password = request.data.get('password')
+    
+            user = CustomUser.objects.filter(username=username).first()
+    
+            if user is None or not user.check_password(password):
+                return Response({'error': 'Invalid username or password'}, status=400)
+    
+            refresh = RefreshToken.for_user(user)
+    
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            })
+    
+    class MyTokenRefreshView(APIView):
+        permission_classes = [IsAuthenticated]
+    
+        def post(self, request):
+            refresh_token = request.data.get('refresh')
+            if not refresh_token:
+                return Response({'error': 'Refresh token is required'}, status=400)
+    
+            try:
+                refresh_token = RefreshToken(refresh_token)
+                access_token = str(refresh_token.access_token)
+            except Exception as e:
+                return Response({'error': str(e)}, status=400)
+    
+            return Response({'access': access_token})
+    
+    class MyProtectedView(APIView):
+        permission_classes = [IsAuthenticated]
+    
+        def get(self, request):
+            serializer = CustomUserSerializer(request.user)
+            return Response(serializer.data)
+                                
+                                
+                                
+</code></pre>
+                        </div>
+                        <div class="modal fade bd-example-modal-lg-3" tabindex="-1" role="dialog"
+                            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Code To Test the api for JWT Token  </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="">
+                                        <pre style="background-color: black;color: white;"><code >
+    // Obtain Token
+    function obtainToken(username, password) {
+        return fetch('/api/token/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            return data.access;
+        });
+    }
+    
+    // Refresh Token
+    function refreshToken(refreshToken) {
+        return fetch('/api/token/refresh/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                refresh: refreshToken
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            return data.access;
+        });
+    }
+    
+    // Access Protected Endpoint
+    function accessProtectedEndpoint(token) {
+        return fetch('/api/protected/', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Protected Endpoint Response:', data);
+        });
+    }
+    
+    // Example Usage
+    const username = 'your_username';
+    const password = 'your_password';
+    
+    obtainToken(username, password)
+        .then(token => {
+            console.log('Access Token:', token);
+            return accessProtectedEndpoint(token);
+        })
+        .then(() => {
+            // Token refresh example (if needed)
+            // const refreshToken = 'your_refresh_token';
+            // return refreshToken(refreshToken);
+        })
+        .then(newToken => {
+            // Optionally, use the new token for further requests
+            // console.log('New Access Token:', newToken);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+                                            
+                                            
+                                    </code></pre>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+
+                    <div class="tab-pane fade" id="list-settings2" role="tabpanel" aria-labelledby="list-settings-list">
+                    
+                        <div class="" style="margin-top: 5px;">
+                            <h4 style="color: orange;text-decoration: underline;">OAuth  Authentication</h4>
+                            <li>The user sends request in return he is given the Oauth code for the processing.
+
+                            </li>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            
+            <div class="card" style="width: 100%;">
+                <h4 style="background-color: green; color: white; width: 100%;padding: 5px;">Role based Authorization</h4>
+
+
+                # permissions.py
+                <pre  style="padding: 20px;background-color: black;">
+                    <code style="color: white;">
+            
+            from rest_framework.permissions import BasePermission
+            
+            class IsAdminOrReadOnly(BasePermission):
+            """
+            Custom permission to allow only admin users to edit objects.
+            """
+            def has_permission(self, request, view):
+                # Read permissions are allowed to any request
+                if request.method in ['GET', 'HEAD', 'OPTIONS']:
+                    return True
+            
+                # Write permissions are only allowed to admin users
+                return request.user and request.user.is_staff
+            
+            class IsManagerOrReadOnly(BasePermission):
+            """
+            Custom permission to allow only manager users to edit objects.
+            """
+            def has_permission(self, request, view):
+                # Read permissions are allowed to any request
+                if request.method in ['GET', 'HEAD', 'OPTIONS']:
+                    return True
+            
+                # Write permissions are only allowed to manager users
+                return request.user and request.user.groups.filter(name='manager').exists()
+            
+                                
+            
+            </code></pre>
+            <br>
+            # main_Code.py
+            <pre  style="padding: 20px;background-color: black;">
+                <code style="color: white;">
+        
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .permissions import IsAdminOrReadOnly, IsManagerOrReadOnly
+
+class MyAdminView(APIView):
+permission_classes = [IsAdminOrReadOnly]
+
+def get(self, request):
+    # View logic here
+    return Response("Admin View")
+
+class MyManagerView(APIView):
+permission_classes = [IsManagerOrReadOnly]
+
+def get(self, request):
+    # View logic here
+    return Response("Manager View")
+            
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        
+        <div class="row">
+            <h5 style="background-color: red;color: white;width: 100%;padding: 5px;">
+                DJANGO API VIEW
+            </h5>
+            <span>
+                Django Api View enables to get the master url mapping by itself based on the type of request method we get .
+            </span>
+        </div>
+        <div class="row">
+
+                <div class="card col-6" style="padding: 20px; background-color: cadetblue;">
+                    <pre>
+                        <code style="color: white;">
+    from rest_framework.views import APIView
+    from rest_framework.response import Response
+    from rest_framework import status
+    
+    class MyAPIView(APIView):
+        def get(self, request):
+            # Logic to handle GET request
+            return Response({"message": "GET request received"}, status=status.HTTP_200_OK)
+        
+        def post(self, request):
+            # Logic to handle POST request
+            return Response({"message": "POST request received"}, status=status.HTTP_201_CREATED)
+        
+        def put(self, request):
+            # Logic to handle PUT request
+            return Response({"message": "PUT request received"}, status=status.HTTP_200_OK)
+        
+        def patch(self, request):
+            # Logic to handle PATCH request
+            return Response({"message": "PATCH request received"}, status=status.HTTP_200_OK)
+        
+        def delete(self, request):
+            # Logic to handle DELETE request
+            return Response({"message": "DELETE request received"}, status=status.HTTP_204_NO_CONTENT)
+
+        def get_with_value(self, request, value):
+            # Custom logic to handle GET request with a specific value
+            if value == 'specific_value':
+                data = {"result": "This is the result for specific_value"}
+                return Response(data, status=status.HTTP_200_OK)
+            else:
+                return Response({"error": "Invalid value"}, status=status.HTTP_400_BAD_REQUEST)
+    
+                        </code>
+                    </pre>
+                </div>
+
+
+            <div class="col-6">
+                <h6 style="background-color: red;color: white; padding: 10px;">
+                    urls.py
+                </h6>
+                <div class="card" style="padding: 20px; background-color: darkgreen;color:white;">
+                    <pre style="color: white;">
+                        <code style="color: white;">
+    from django.urls import path
+    from myapp.views import MyAPIView
+    
+    urlpatterns = [
+        path('myapi/', MyAPIView.as_view(), name='my-api'),
+        path('myapi/<str:value>/', MyAPIView.as_view({'get': 'get_with_value'}), name='my-api-value'),
+            
+    ]
+    
+
+
+
+    //comment   ----  In this URL configuration, we're defining a new URL pattern that includes a parameter (<str:value>) to capture the value from the URL. We then specify that this URL pattern should be handled by the get_with_value method of the MyAPIView class when a GET request is made.
+                        </code>
+                    </pre>
+                </div>
+                <br>
+                <br>
+                
+                <h6 style="background-color: orange; padding: 10px;">
+                    Example for the custom implementation of the API View 
+                </h6>
+
+
+                <div class="card" style="padding: 20px; background-color: black;">
+                
+                    <pre>
+                        <code style="color: white;">
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+
+@api_view(['GET', 'POST'])
+def custom_api_view(request):
+    if request.method == 'GET':
+        # Custom logic for handling GET request
+        data = {'message': 'Custom GET request handling'}
+        return Response(data, status=status.HTTP_200_OK)
+    elif request.method == 'POST':
+        # Custom logic for handling POST request
+        if request.data.get('key') == 'value':
+            return Response({'message': 'Success!'}, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'message': 'Invalid data!'}, status=status.HTTP_400_BAD_REQUEST)
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var django_rest_block="#django-block";
+        var django_block="#django-rest-block";
+
+        function swithTabs(v){
+            if (v=="1"){
+                $(django_rest_block).hide();
+                $(django_block).show();
+
+                $("#btn2").css('background-color', 'white');
+                $("#btn2").css('color', 'black');
+
+                $("#btn1").css('background-color', 'green');
+                $("#btn1").css('color', 'white');
+            }
+            else{
+                $(django_rest_block).show();
+                $(django_block).hide();
+
+                $("#btn2").css('background-color', 'green');
+                $("#btn2").css('color', 'white');
+                $("#btn1").css('background-color', 'white');
+                $("#btn1").css('color', 'black');
+            }
+            
+
+        }
+
+
+
+    </script>
+    
+
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

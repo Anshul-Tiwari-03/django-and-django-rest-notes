@@ -34,26 +34,29 @@ This is a Django project that utilizes Django Rest Framework (DRF) to build REST
 
 The project structure follows the standard Django project layout:
 
+```
 django-and-django-rest-notes/
 │
-├── myapp/ # Django app directory
-│ ├── migrations/ # Database migrations
-│ ├── templates/ # HTML templates (if applicable)
-│ ├── init.py
-│ ├── admin.py
-│ ├── apps.py
-│ ├── models.py # Django models
-│ ├── tests.py # Unit tests
-│ └── views.py # Django views
+├── myapp/
+│   ├── migrations/
+│   ├── templates/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
 │
-├── myproject/ # Django project directory
-│ ├── init.py
-│ ├── settings.py # Django settings
-│ ├── urls.py # URL routing
-│ └── wsgi.py # WSGI configuration for deployment
+├── myproject/
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
 │
-├── manage.py # Django management script
-└── requirements.txt # List of project dependencies
+├── manage.py
+└── requirements.txt
+```
+
 
 
 ## Dependencies
